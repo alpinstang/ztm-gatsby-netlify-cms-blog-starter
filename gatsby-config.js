@@ -14,6 +14,7 @@ module.exports = {
 		siteUrl: `https://github.com/r4pt0s/ztm-gatsby-netlify-cms-blog-starter`,
 	},
 	plugins: [
+		`gatsby-plugin-postcss`,
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
