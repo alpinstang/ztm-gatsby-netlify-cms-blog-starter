@@ -42,6 +42,16 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
 
     Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    
+## 📝 Useful Notes
+
+1. Styling with [Tailwind CSS](https://tailwindcss.com/) - Popular utility CSS library that is optimized for performance and simplicity.
+
+2. Using [heroicons](https://heroicons.com/) - All icons are using the heroicons library of svg icons. From the makers of Tailwind CSS.
+
+3. Typography is managed by [@tailwindcss/typography](https://tailwindcss-typography.netlify.app/). It provides a set of prose classes to add beautiful typographic defaults to any vanilla HTML you don't control (like HTML rendered from Markdown, or pulled from a CMS). It's also easily used in directly controlled components.
+
+4. Dark mode is supported in Tailwind CSS v2.0.0 and higher. [gatsby-plugin-dark-mode](https://www.gatsbyjs.com/plugins/gatsby-plugin-dark-mode/) is a support plugin with a React component that manages some aspects of switching between default and dark modes.
 
 ## 🧐 What's inside?
 
@@ -94,16 +104,6 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 📝 Useful Notes
-
-1. Styling with [Tailwind CSS](https://tailwindcss.com/) - Popular utility CSS library that is optimized for performance and simplicity.
-
-2.Using [heroicons](https://heroicons.com/) - All icons are using the heroicons library of svg icons. From the makers of Tailwind CSS.
-
-3. Typography is managed by [@tailwindcss/typography](https://tailwindcss-typography.netlify.app/). It provides a set of prose classes to add beautiful typographic defaults to any vanilla HTML you don't control (like HTML rendered from Markdown, or pulled from a CMS). It's also easily used in directly controlled components.
-
-4. Dark mode is supported in Tailwind CSS v2.0.0 and higher. [gatsby-plugin-dark-mode](https://www.gatsbyjs.com/plugins/gatsby-plugin-dark-mode/) is a support plugin with a React component that manages some aspects of switching between default and dark modes.
 
 ## 🎓 Learning Gatsby
 
