@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header
+  className="mb-8 bg-rebeccapurple border-b dark:border-gray-500 dark:bg-purple-900"
+>
+  <nav>
+    <div
+      className="text-white no-underline max-w-4xl mx-auto flex items-center h-20 w-full justify-between px-4"
+    >
+      <a
+        className="no-underline sm:text-xs"
+        href="/"
+      >
+        <h1
+          className="text-2xl md:text-3xl lg:text-4xl font-bold	mb-0 pr-2 always-white"
+        >
+          Default Starter
+        </h1>
+      </a>
+      <div
+        className="flex items-center"
+      >
+        <div
+          className="ml-4"
+        >
+          <div
+            className="p-2"
+            id="switcher"
+          >
+            <label>
+              <input
+                checked={false}
+                className="toggle-checkbox"
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <div
+                className="toggle-slot"
+              >
+                <div
+                  className="sun-icon-wrapper"
+                >
+                  <svg
+                    className="sun-icon"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clipRule="evenodd"
+                      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="toggle-button"
+                />
+                <div
+                  className="moon-icon-wrapper"
+                >
+                  <svg
+                    className="moon-icon"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+`;

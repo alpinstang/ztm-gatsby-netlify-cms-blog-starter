@@ -1,11 +1,14 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.zerotomastery.io">
+    <img alt="ZTM" src="https://avatars.githubusercontent.com/u/35373879?s=200&v=4" width="60" />
+  </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  Gatsby's Default Starter
 </h1>
 
 Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
@@ -47,7 +50,15 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     .
     ├── node_modules
     ├── src
+        ├── cms
+        ├── components
+        ├── fonts
+        ├── images
+        ├── page-templates
+        ├── pages
+        └── styles
     ├── .gitignore
+    ├── .prettierignore
     ├── .prettierrc
     ├── gatsby-browser.js
     ├── gatsby-config.js
@@ -56,7 +67,9 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── LICENSE
     ├── package-lock.json
     ├── package.json
-    └── README.md
+    ├── postcss.config.js
+    ├── README.md
+    └── tailwind.config.js
 
 1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
@@ -82,6 +95,16 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
+## 📝 Useful Notes
+
+1. Styling with [Tailwind CSS](https://tailwindcss.com/) - Popular utility CSS library that is optimized for performance and simplicity.
+
+2.Using [heroicons](https://heroicons.com/) - All icons are using the heroicons library of svg icons. From the makers of Tailwind CSS.
+
+3. Typography is managed by [@tailwindcss/typography](https://tailwindcss-typography.netlify.app/). It provides a set of prose classes to add beautiful typographic defaults to any vanilla HTML you don't control (like HTML rendered from Markdown, or pulled from a CMS). It's also easily used in directly controlled components.
+
+4. Dark mode is supported in Tailwind CSS v2.0.0 and higher. [gatsby-plugin-dark-mode](https://www.gatsbyjs.com/plugins/gatsby-plugin-dark-mode/) is a support plugin with a React component that manages some aspects of switching between default and dark modes.
+
 ## 🎓 Learning Gatsby
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
@@ -95,5 +118,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
