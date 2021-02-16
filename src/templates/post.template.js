@@ -26,13 +26,18 @@ const PostTemplate = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title={`${frontmatter.title} | Blog`} />
+			<section className="max-w-lg mx-auto">
+				<h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3">
+					{frontmatter.title}
+				</h1>
+				<div className="mb-8 prose prose-sm sm:prose md:prose-md lg:prose-lg xl:prose-xl 2xl:prose-2xl dark:prose-light mx-auto">
+					<p className="text-xl">{frontmatter.description}</p>
+				</div>
+			</section>
 			<article className="prose prose-sm sm:prose md:prose-md lg:prose-lg xl:prose-xl 2xl:prose-2xl dark:prose-light mx-auto">
-				<h1>{frontmatter.title}</h1>
-				<p>{frontmatter.date}</p>
 				<MDXRenderer>{body}</MDXRenderer>
+				<Author data={frontmatter} />
 			</article>
-			<p>THIS IS THE POST TEMPLATE</p>
-			<Author data={frontmatter} />
 		</Layout>
 	);
 };

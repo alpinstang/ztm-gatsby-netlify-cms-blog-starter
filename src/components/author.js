@@ -4,42 +4,21 @@ const Author = ({ data }) => {
 	const d = new Date().getFullYear().toString();
 	const { author = "ghostwriter", date = { d }, twitter } = data;
 	return (
-		<div class="flex">
-			<a
-				rel="nofollow"
-				title={author}
-				href="#"
-				class="relative flex-shrink-0 w-12 h-12 mr-4 overflow-hidden rounded-full">
+		<div className="bg-white dark:bg-gray-700 max-w-full flex items-center px-2 rounded-xl shadow border dark:border-gray-700">
+			<div className="flex items-center mr-2 overflow-hidden">
 				<img
-					src={`https://robohash.org/${author}`}
-					alt={author}
-					class="absolute inset-0 object-cover w-full h-full"
+					src="https://i.pravatar.cc/50"
+					alt="My profile"
+					className="w-16 rounded-full"
 				/>
-			</a>
-			<div class="flex flex-col leading-tight">
-				<div class="flex items-center">
-					<h1 class="mb-1 text-lg font-bold text-secondary">{author}</h1>{" "}
-					<span class="ml-2">
-						<a
-							rel="nofollow"
-							href={`http://twitter.com/${twitter || "zerotomasteryio"}`}
-							class="inline-block">
-							<svg
-								version="1.1"
-								id="Capa_1"
-								xmlns="http://www.w3.org/2000/svg"
-								x="0px"
-								y="0px"
-								viewBox="0 0 612 612"
-								class="w-4 h-4 fill-current text-twitter">
-								<g>
-									<path d="M612,116.258c-22.525,9.981-46.694,16.75-72.088,19.772c25.929-15.527,45.777-40.155,55.184-69.411 c-24.322,14.379-51.169,24.82-79.775,30.48c-22.907-24.437-55.49-39.658-91.63-39.658c-69.334,0-125.551,56.217-125.551,125.513 c0,9.828,1.109,19.427,3.251,28.606C197.065,206.32,104.556,156.337,42.641,80.386c-10.823,18.51-16.98,40.078-16.98,63.101 c0,43.559,22.181,81.993,55.835,104.479c-20.575-0.688-39.926-6.348-56.867-15.756v1.568c0,60.806,43.291,111.554,100.693,123.104 c-10.517,2.83-21.607,4.398-33.08,4.398c-8.107,0-15.947-0.803-23.634-2.333c15.985,49.907,62.336,86.199,117.253,87.194 c-42.947,33.654-97.099,53.655-155.916,53.655c-10.134,0-20.116-0.612-29.944-1.721c55.567,35.681,121.536,56.485,192.438,56.485 c230.948,0,357.188-191.291,357.188-357.188l-0.421-16.253C573.872,163.526,595.211,141.422,612,116.258z"></path>
-								</g>
-							</svg>
-						</a>
-					</span>
-				</div>{" "}
-				<span class="text-sm text-gray-600">{date}</span>{" "}
+			</div>
+			<div className="m-0 p-0 line-height-0">
+				<div className="font-semibold text-gray-700 dark:text-gray-200">
+					{author}
+				</div>
+				<div className="text-sm text-gray-500 dark:text-gray-200">
+					{date}
+				</div>
 			</div>
 		</div>
 	);
