@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 
 // create a node for each md/mdx file
+// This is for the main pages of our site
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -31,7 +32,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 	const result = await graphql(`
 		query {
-			allMdx {
+			allMd {
 				edges {
 					node {
 						id
@@ -49,9 +50,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	}
 
 	// Create blog post pages.
-	const posts = result.data.allMdx.edges;
+	const pages = result.data.allMdx.edges;
 
-	posts.forEach(({ node }, index) => {
+	pages.forEach(({ node }, index) => {
 		createPage({
 			path: node.fields.slug,
 			component: path.resolve(`./src/templates/page.template.js`),
