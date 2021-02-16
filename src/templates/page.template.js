@@ -26,6 +26,7 @@ const PageTemplate = ({ data }) => {
 				<p>{frontmatter.date}</p>
 				<MDXRenderer>{body}</MDXRenderer>
 			</article>
+			<p>THIS IS THE PAGE TEMPLATE</p>
 		</Layout>
 	);
 };

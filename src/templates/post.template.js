@@ -31,6 +31,7 @@ const PostTemplate = ({ data }) => {
 				<p>{frontmatter.date}</p>
 				<MDXRenderer>{body}</MDXRenderer>
 			</article>
+			<p>THIS IS THE POST TEMPLATE</p>
 			<Author data={frontmatter} />
 		</Layout>
 	);

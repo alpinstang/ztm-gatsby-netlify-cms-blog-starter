@@ -32,12 +32,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 	const result = await graphql(`
 		query {
-			allMd {
+			allMdx {
 				edges {
 					node {
 						id
 						fields {
 							slug
+						}
+						frontmatter {
+							template
 						}
 					}
 				}
@@ -50,13 +53,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	}
 
 	// Create blog post pages.
-	const pages = result.data.allMdx.edges;
+	const files = result.data.allMdx.edges;
 
-	pages.forEach(({ node }, index) => {
-		createPage({
-			path: node.fields.slug,
-			component: path.resolve(`./src/templates/page.template.js`),
-			context: { id: node.id },
-		});
+	files.forEach(({ node }, index) => {
+		if (node.frontmatter.template === "page") {
+			createPage({
+				path: node.fields.slug,
+				component: path.resolve(`./src/templates/page.template.js`),
+				context: { id: node.id },
+			});
+		} else if (node.frontmatter.template === "post") {
+			createPage({
+				path: node.fields.slug,
+				component: path.resolve(`./src/templates/post.template.js`),
+				context: { id: node.id },
+			});
+		} else {
+			createPage({
+				path: node.fields.slug,
+				component: path.resolve(`./src/templates/default.template.js`),
+				context: { id: node.id },
+			});
+		}
 	});
 };
