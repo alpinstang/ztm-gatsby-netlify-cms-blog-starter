@@ -26,18 +26,34 @@ module.exports = {
 		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
+		// {
+		// 	resolve: `gatsby-plugin-mdx`,
+		// 	options: {
+		// 		extensions: [".mdx", ".md"],
+		// 		defaultLayouts: {
+		// 			// This entry template will switch the page template based on
+		// 			// a frontmatter value provided in the CMS, allowing users to
+		// 			// choose different template layouts.
+		// 			default: require.resolve(
+		// 				`./src/page-templates/cms-entry.template.js`
+		// 			),
+		// 		},
+		// 	},
+		// },
 		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
-				extensions: [".mdx", ".md"],
+				extensions: [`.mdx`, `.md`],
 				defaultLayouts: {
-					// This entry template will switch the page template based on
-					// a frontmatter value provided in the CMS, allowing users to
-					// choose different template layouts.
-					default: require.resolve(
-						`./src/page-templates/cms-entry.template.js`
-					),
+					default: require.resolve(`./src/templates/page.template.js`),
 				},
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `pages`,
+				path: `${__dirname}/src/pages`,
 			},
 		},
 		{
