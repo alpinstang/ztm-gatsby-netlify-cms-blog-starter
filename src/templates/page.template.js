@@ -17,7 +17,7 @@ export const query = graphql`
 `;
 
 const PageTemplate = ({ data }) => {
-	const { frontmatter, body } = data.mdx;
+	const { frontmatter = "", body } = data.mdx;
 	return (
 		<Layout>
 			<SEO title={`${frontmatter.title} | Blog`} />
