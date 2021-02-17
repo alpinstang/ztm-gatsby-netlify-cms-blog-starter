@@ -1,22 +1,22 @@
 backend:
   name: test-repo
-
-media_folder: static/img
-public_folder: /img
-publish_mode: editorial_workflow
-collections: 
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
+media_folder: static/assets
+public_folder: /assets
+collections:
+  - name: blog
+    label: Blog
+    folder: markdown/posts
     create: true
-    slug: 'index'
-    media_folder: ''
-    public_folder: ''
-    path: '{{title}}/index'
-    editor: 
-      preview: true
+    path: "{ { title } }"
     fields:
-      - { label: 'Title', name: 'title', widget: 'string'}
-      - { label: 'Publish Date', name: 'date', widget: 'datetime'}
-      - { label: 'Description', name: 'description', widget: 'string'}
-      - { label: 'Body', name: 'body', widget: 'markdown'}
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title, widget: string }
+      - { name: template, label: Template, widget: string }
+      - { name: body, label: Body, widget: markdown }
+      - {
+          label: Tags,
+          name: tags,
+          widget: tags,
+          separator: ",",
+          required: false,
+        }
