@@ -10,10 +10,11 @@
 //* All of the described parts may or may not be also single components as well. Depends on how we can reuse them.
 
 import React from "react";
+import Image from "./image";
 
 const BlogCardComponent = (props) => {
 	const {
-		teaserImageUrl,
+		teaserImageFluid,
 		altTeaserImageDesc,
 		blogHeading,
 		publishDate,
@@ -25,7 +26,7 @@ const BlogCardComponent = (props) => {
 
 	return (
 		<div className="container w-1/4 border-4 m-2">
-			<img src={teaserImageUrl} alt={altTeaserImageDesc} />
+			<Image className="h-3" />
 			{blogTags.map((blogtag, index) => {
 				return (
 					<span className="text-sm m-1 p-0.5 bg-red-300" key={index}>
@@ -42,11 +43,7 @@ const BlogCardComponent = (props) => {
 			</p>
 			<p className="m-1 text-sm">About the author:</p>
 			<div className=" flex flex-row items-center justify-around m-1">
-				<img
-					src={authorAvatarUrl}
-					alt={`A photo of ${authorName}`}
-					className="w-32 rounded-full"
-				/>
+				<Image />
 				<p>{authorName}</p>
 			</div>
 		</div>
