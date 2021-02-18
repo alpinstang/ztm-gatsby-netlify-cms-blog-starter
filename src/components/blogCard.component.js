@@ -10,24 +10,28 @@
 //* All of the described parts may or may not be also single components as well. Depends on how we can reuse them.
 
 import React from "react";
-import Image from "./image";
+import Image from "./image.component";
 
 const BlogCardComponent = (props) => {
 	const {
-		teaserImageFluid,
-		altTeaserImageDesc,
-		blogHeading,
-		publishDate,
-		teaserText,
-		authorAvatarUrl,
-		authorName,
-		blogTags,
+		slug,
+		excerpt,
+		frontmatter,
+		// altTeaserImageDesc,
+		// authorAvatarUrl,
 	} = props;
+
+	let tags = [];
+
+	if (frontmatter.tags !== "" && frontmatter.tags.length > 1) {
+		tags = frontmatter.tags.split(",");
+	}
 
 	return (
 		<div className="container w-1/4 border-4 m-2">
-			<Image className="h-3" />
-			{blogTags.map((blogtag, index) => {
+			{/* image here */}
+
+			{tags.map((blogtag, index) => {
 				return (
 					<span className="text-sm m-1 p-0.5 bg-red-300" key={index}>
 						{blogtag}
@@ -35,17 +39,24 @@ const BlogCardComponent = (props) => {
 				);
 			})}
 
-			<h2 className="text-xl m-1">{blogHeading}</h2>
-			<span className="m-1">{publishDate}</span>
+			<h2 className="text-xl m-1">{frontmatter.title}</h2>
+			<span className="m-1">{frontmatter.date}</span>
 			<p className="m-1">
-				{teaserText}
-				<a href="#">Read more</a>
+				{excerpt}
+				<a href={slug}>Read more</a>
 			</p>
 			<p className="m-1 text-sm">About the author:</p>
 			<div className=" flex flex-row items-center justify-around m-1">
-				<Image />
-				<p>{authorName}</p>
+				<Image imageName={frontmatter.teaserImage} />
+				<p>
+					<br />
+					<br />
+
+					{frontmatter.author}
+				</p>
 			</div>
+			<p>JSON PROPS</p>
+			{JSON.stringify(props, null, 2)}
 		</div>
 	);
 };

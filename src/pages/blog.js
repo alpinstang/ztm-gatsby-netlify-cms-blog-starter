@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import PostLink from "../components/postLink";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import BlogCard from "../components/blogCard.component";
 
 const IndexPage = ({ data }) => {
 	const files = data.allMdx.edges;
@@ -12,12 +13,12 @@ const IndexPage = ({ data }) => {
 	);
 
 	let renderedPosts;
-
+	// <PostLink key={node.id} post={node} />
 	if (filteredPosts.length === 0) {
 		renderedPosts = <p>No posts available</p>;
 	} else {
 		renderedPosts = filteredPosts.map(({ node }) => (
-			<PostLink key={node.id} post={node} />
+			<BlogCard key={node.id} {...node} />
 		));
 	}
 
@@ -52,6 +53,9 @@ export const pageQuery = graphql`
 						date(formatString: "MMMM DD, YYYY")
 						title
 						template
+						author
+						teaserImage
+						tags
 					}
 				}
 			}
