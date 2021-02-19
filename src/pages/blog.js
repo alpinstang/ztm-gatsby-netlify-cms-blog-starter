@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
 					learn to code and sharpen your skills to achieve your goals.
 				</p>
 			</div>
-			<section className="bg-purple-200 dark:bg-indigo-900 p-4 rounded-sm">
+			<section className="dark:bg-gray-800 p-4 rounded-sm">
 				{renderedPosts}
 			</section>
 		</Layout>
