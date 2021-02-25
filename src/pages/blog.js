@@ -6,7 +6,6 @@ import SEO from "../components/seo";
 
 import BlogCard from "../components/blogCard.component";
 
-
 const IndexPage = ({ data }) => {
 	const files = data.allMdx.edges;
 
@@ -21,7 +20,6 @@ const IndexPage = ({ data }) => {
 		renderedPosts = <p>No posts available</p>;
 	} else {
 		renderedPosts = filteredPosts.map(({ node }) => (
-
 			<BlogCard key={node.id} {...node} />
 		));
 	}
@@ -36,7 +34,7 @@ const IndexPage = ({ data }) => {
 					learn to code and sharpen your skills to achieve your goals.
 				</p>
 			</div>
-			<section className="bg-purple-200 dark:bg-indigo-900 p-4 rounded-sm">
+			<section className="bg-rebeccapurple border-b dark:border-gray-500 dark:bg-purple-900 p-4 rounded-sm">
 				{renderedPosts}
 			</section>
 		</Layout>
@@ -60,7 +58,6 @@ export const pageQuery = graphql`
 						author
 						teaserImage
 						tags
-
 					}
 				}
 			}
