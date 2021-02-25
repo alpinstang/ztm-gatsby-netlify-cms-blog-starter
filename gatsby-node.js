@@ -76,4 +76,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			});
 		}
 	});
+
+	const posts = files.filter(
+		({ node }) => node.frontmatter.template === "post"
+	);
+	const postsPerPage = 10;
+	const numPages = Math.ceil(posts.length / postsPerPage);
+
+	for (let i = 0; i < numPages; i++) {
+		createPage({
+			path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+			component: path.resolve("./src/templates/bloglist.template.js"),
+			context: {
+				limit: postsPerPage,
+				skip: i * postsPerPage,
+				numPages,
+				currentPage: i + 1,
+			},
+		});
+	}
 };

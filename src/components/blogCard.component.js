@@ -55,8 +55,8 @@ const BlogCardComponent = (props) => {
 					{frontmatter.author}
 				</p>
 			</div>
-			<p>JSON PROPS</p>
-			{JSON.stringify(props, null, 2)}
+			{/* <p>JSON PROPS</p>
+			{JSON.stringify(props, null, 2)} */}
 		</div>
 	);
 };
