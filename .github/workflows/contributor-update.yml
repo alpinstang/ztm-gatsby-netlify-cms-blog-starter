@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  update_contributors_job:
+    runs-on: ubuntu-latest
+    name: A job to add contributors markdown
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Generate markdown file
+        uses: ./
+      - uses: stefanzweifel/git-auto-commit-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          commit_message: Update generated contributors markdown
+          branch: master
