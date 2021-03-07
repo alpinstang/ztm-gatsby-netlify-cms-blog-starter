@@ -7,9 +7,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Generate markdown file
-        uses: ./
-      - uses: stefanzweifel/git-auto-commit-action@v2
+      - uses: cjdenio/contributor_list@1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
