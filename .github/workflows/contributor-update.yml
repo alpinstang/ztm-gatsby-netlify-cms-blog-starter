@@ -13,4 +13,3 @@ jobs:
       - uses: bubkoo/contributors-list@v1.0.6
         with:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         push_options: '--force'
