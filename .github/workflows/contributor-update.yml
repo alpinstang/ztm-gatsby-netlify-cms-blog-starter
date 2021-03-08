@@ -7,9 +7,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: cjdenio/contributor_list@1.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: bubkoo/contributors-list@v1.0.6
         with:
-          commit_message: Update generated contributors markdown
-          branch: master
+         GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
