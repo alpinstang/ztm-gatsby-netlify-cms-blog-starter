@@ -14,6 +14,8 @@ module.exports = {
 		siteUrl: `https://github.com/r4pt0s/ztm-gatsby-netlify-cms-blog-starter`,
 	},
 	plugins: [
+		`gatsby-plugin-postcss`,
+		`gatsby-plugin-dark-mode`,
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
@@ -25,16 +27,27 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `pages`,
+				path: `${__dirname}/src/markdown`,
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `posts`,
+				path: `${__dirname}/src/markdown/posts`,
+			},
+		},
+		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
-				extensions: [".mdx", ".md"],
+				extensions: [`.mdx`, `.md`],
 				defaultLayouts: {
-					// This entry template will switch the page template based on
-					// a frontmatter value provided in the CMS, allowing users to
-					// choose different template layouts.
-					default: require.resolve(
-						`./src/page-templates/cms-entry.template.js`
-					),
+					posts: require.resolve("./src/templates/post.template.js"),
+					pages: require.resolve(`./src/templates/page.template.js`),
+					default: require.resolve(`./src/templates/default.template.js`),
 				},
 			},
 		},
