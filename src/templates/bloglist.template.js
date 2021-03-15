@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import PostLink from "../components/postLink";
+import BlogCard from "../components/blogCard.component";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
@@ -17,9 +17,8 @@ const BloglistTemplate = ({ data, pageContext }) => {
 		renderedPosts = <p>No posts available</p>;
 	} else {
 		renderedPosts = filteredPosts.map(({ node }) => (
-			<PostLink key={node.id} post={node} />
+			<BlogCard key={node.id} {...node} />
 		));
-		console.log(renderedPosts);
 	}
 
 	return (
@@ -33,7 +32,7 @@ const BloglistTemplate = ({ data, pageContext }) => {
 					{pageContext.numPages} pages.
 				</p>
 			</article>
-			<section className="flex flex-wrap dark:bg-gray-800 p-4 rounded-sm">
+			<section className="flex flex-wrap bg-gray-100 dark:bg-gray-800 p-2 md:p-4 rounded-sm">
 				{renderedPosts}
 			</section>
 			<section className="flex justify-center">
