@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const BloglistTemplate = ({ data, pageContext }) => {
+	const { currentPage, numPages } = pageContext;
 	const files = data.allMdx.edges;
 
 	const filteredPosts = files.filter(
@@ -28,8 +29,8 @@ const BloglistTemplate = ({ data, pageContext }) => {
 				<h2>Blog Page</h2>
 				<p>
 					This is where you will find all the blogs. The blogs will be displayed
-					from latest to oldest. This is page {pageContext.currentPage} out of{" "}
-					{pageContext.numPages} pages.
+					from latest to oldest. This is page {currentPage} out of {numPages}{" "}
+					pages.
 				</p>
 			</article>
 			<section className="flex flex-wrap bg-gray-100 dark:bg-gray-800 p-2 md:p-4 rounded-sm">
@@ -37,10 +38,24 @@ const BloglistTemplate = ({ data, pageContext }) => {
 			</section>
 			<section className="flex justify-center">
 				<div className="m-4">
-					<Link to={`/blog/${pageContext.currentPage - 1}`}>Prev</Link>
+					{pageContext.currentPage > 1 ? (
+						<Link
+							to={currentPage - 1 === 1 ? `/blog` : `/blog/${currentPage - 1}`}>
+							Prev
+						</Link>
+					) : (
+						<p className="text-transparent">Prev</p>
+					)}
 				</div>
 				<div className="m-4">
-					<Link to={`/blog/${pageContext.currentPage + 1}`}>Next</Link>
+					<p>{currentPage}</p>
+				</div>
+				<div className="m-4">
+					{currentPage < numPages ? (
+						<Link to={`/blog/${pageContext.currentPage + 1}`}>Next</Link>
+					) : (
+						<p className="text-transparent">Next</p>
+					)}
 				</div>
 			</section>
 		</Layout>
