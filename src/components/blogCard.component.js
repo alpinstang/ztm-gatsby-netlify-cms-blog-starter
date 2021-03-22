@@ -10,6 +10,7 @@
 //* All of the described parts may or may not be also single components as well. Depends on how we can reuse them.
 
 import React from "react";
+import { Link } from "gatsby";
 import Image from "./image.component";
 
 const BlogCardComponent = (props) => {
@@ -23,12 +24,12 @@ const BlogCardComponent = (props) => {
 
 	let tags = [];
 
-	if (frontmatter.tags !== "" && frontmatter.tags.length > 1) {
+	if (frontmatter.tags) {
 		tags = frontmatter.tags.split(",");
 	}
 
 	return (
-		<div className="container w-1/3 border-2 m-2 p-2 text-black bg-white dark:text-white dark:bg-gray-900 border-gray-500">
+		<div className="container w-full md:w-1/3 border-2 m-2 p-2  bg-white dark:bg-gray-900 border-gray-500">
 			{/* image here */}
 
 			{tags.map((blogtag, index) => {
@@ -43,19 +44,14 @@ const BlogCardComponent = (props) => {
 
 			<h2 className="text-xl font-bold m-2">{frontmatter.title}</h2>
 			<span className="m-2 font-light">{frontmatter.date}</span>
-			<p className="m-2">
-				{excerpt}
-				<a href={slug}>Read more</a>
-			</p>
+			<p className="m-2">{excerpt}</p>
+			<Link to={slug} className="m-2">
+				Read more
+			</Link>
 			<p className="m-2 text-sm font-thin">About the author:</p>
 			<div className=" flex flex-row items-center m-2">
 				<Image imageName={frontmatter.teaserImage} />
-				<p className="font-medium">
-					<br />
-					<br />
-
-					{frontmatter.author}
-				</p>
+				<p className="font-medium">{frontmatter.author}</p>
 			</div>
 		</div>
 	);
