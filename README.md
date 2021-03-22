@@ -15,7 +15,7 @@ Kick off your project with this default boilerplate. This starter ships with the
 
 ## 💜 Contributors
 
-![contributors](https://github.com/alpinstang/ztm-gatsby-netlify-cms-blog-starter/blob/78e757435fd3aeaf3852ecfc50fe9c82c40ebbb9/CONTRIBUTORS.svg)
+![contributors](https://raw.githubusercontent.com/alpinstang/ztm-gatsby-netlify-cms-blog-starter/fc191000ddfa332bcf562d851da7fd2e458f9f21/CONTRIBUTORS.svg)
 
 ## 🚀 Quick start
 
